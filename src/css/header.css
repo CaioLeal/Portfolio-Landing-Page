@@ -1,0 +1,86 @@
+header {
+    padding: 15px 8%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex; /* Exibe os itens em linha */
+    align-items: center; /* Alinheamento vertical dos itens */
+    justify-content: space-between; /* Alinhamento dos itens */
+    background: var(--gradient-white-bg); /* Cor de fundo gradiente */
+    z-index: 100; /* Garante o header acima dos outros elementos */
+    transition: .3; /* transição suave */
+}
+
+header .logo {
+    font-size: 1.7rem; /* Tamanho do texto */
+    font-weight: 700; /* Texto mais negrito */
+}
+
+span { /* Destaque da primeira letra da logo que esta no Span */
+    background: var(--gradient-color-bg);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+ul.navlist {
+    display: flex;
+}
+
+.navlist li {
+    margin: 0 1rem;
+}
+
+.navlist li a {
+    display: inline-flex;
+    font-weight: 600;
+}
+
+.navlist li a:hover, .navlist li a.active {
+    background: var(--gradient-color-bg);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.right-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-gap: .8rem
+}
+
+.btn {
+    background: var(--gradient-color-bg);
+    color: #fff;
+    padding:  8px 10px; /* Espaçamento interno do botão */
+    border-radius: 5px; /*Aplicando bordas arrendodadas */
+    font-weight: 500; /* Texto mais negrito */
+    transition: all .3s ease; /*Aplicando transição para todas as propriedades */;
+}
+
+.btn:hover, btn-btn .d-CV:hover {
+    box-shadow: var(--hover-box-shadow);
+}
+
+.menu--icon .bar, menu-icon::after, menu-icon::before {
+    content: "";
+    display: none; /* Esconde as barras do menu por padrão */
+    width: 100%; /* Largura total do icone do menu */
+    height: 4px;
+    border-radius: 3px;
+    background: #000;
+    margin: 6px 0;
+    transition: .4s;
+}
+
+.menu-icon.active::before {
+    transform: rotate(-45deg) translate(-6px, 6px);
+}
+
+.menu-icon.active::after {
+    transform: rotate(-45deg) translate(-8px, -8px);
+}
+
+.menu-icon.active .bar {
+    opacity: 0;
+}

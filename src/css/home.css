@@ -1,0 +1,268 @@
+section {
+    padding: 90px 8%;
+}
+
+.home {
+    min-height: 100vh; /* Seção ocupa toda altura da tela */
+    height: 100%; /* Garante altura seja de 100% do container pai */
+    width: 100%; /* Largura total da seção */
+    display: grid;
+    grid-template-columns: repeat(2 , 1fr); /*Divide a seção em duas colunas iguais */
+    align-items: center; /* Alinhamento vertical no centro */
+    grid-gap: 4em; /* Espaçamento entre colunas */
+    background: var(--gradient-white-bg2);
+}
+
+.hero-info {
+    margin-top: 3rem;
+}
+
+.hero-info h3 {
+    color: var(--font-color);
+    font-weight: 300; /* Texto mais negrito */
+    text-transform: uppercase; /* Deixa texto em maiusculo */
+    font-size: 1.1rem;
+}
+
+.hero-info h1 {
+    font-size: 3.5rem;
+}
+
+.text-animate {
+    width: 22.8rem;
+    position: relative;
+}
+
+.text-animate h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: transparent;
+    -webkit-text-stroke: .1vw var(--main-color);
+    background: var(--gradient-color-bg);
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-position: 0 0;
+    transition: .6s;
+    letter-spacing: 2px;
+    animation: moveText 3s linear infinite;
+}
+
+.text-animate h2::before {
+    content: "";
+    position: absolute;
+    top: 7px;
+    left: -3px;
+    width: 0;
+    height: 70%;
+    border-right: 2px solid var(--main-color);
+    animation: moveCursorText 3s linear infinite;
+}
+
+.hero-info p {
+    font-size: .9rem;
+    color: var(--font-color);
+    line-height: 1.5rem;
+}
+
+.btn-box {
+    display: flex;
+    justify-content: space-between;
+    width: 320px;
+    margin-top: 2rem;
+    margin-bottom: 6rem;
+}
+
+.btn-box .btn {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.btn-box .d-CV {
+    background: var(--gradient-white-bg2);
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: 500;
+    color: #000;
+    box-shadow: rgba(60, 64, 67, .3)0px 1px 2px 0, rgba(60, 64, 67, .15)0px 2px 6px 2px;
+    transition: all .3s ease;
+}
+
+.social-media {
+    display: flex;
+    justify-content: space-between;
+    width: 220px;
+    height: 45px;
+}
+
+.social-media a { /* Estilo dos icones de midias sociais */
+    width: 42px;
+    height: 42px;
+    font-size: 1.5rem;
+    color: var(--main-color);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    transition: .4s;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.social-media a:hover { /* Efeito ao passar o mouse por cima dos icones */
+    background: var(--gradient-color-bg);
+    color: #fff;
+}
+
+.bg-icon {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bg-icon span {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: var(--gradient-color-bg);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    animation: animate 1s linear infinite;
+}
+
+.img-hero {
+    position: relative;
+    animation: floatImage 4s ease-in-out infinite;
+    animation-delay: 3s;
+}
+
+.img-hero img {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    object-fit: cover; /* Faz a imagem preencher o espaço sem distorcer */
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.rotate-text {
+    position: absolute;
+    top: 4%;
+    left: -53px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 2rem;
+}
+
+/* #################### Roda de Rolamento #################### */
+.rotate-text span { /*Roda de Rolamento */
+    position: relative;
+    width: 442px;
+    height: 442px;
+    background: var(--main-color);
+    border: 6px solid #eeaef0;
+    border-radius: 50%;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.rotate-text span::before {
+    content: '';
+    position: absolute;
+    inset: 20px;
+    background: #00aaff;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.rotate-text span i {
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-color-bg);
+    filter: blur(5px); /*Efeito de brilho */
+    animation: animate 2s linear infinite;
+}
+
+.rotate-text .text {
+    position: absolute;
+    width: 490px;
+    height: 490px;
+    background: #f2f6fb;
+    border-radius: 50%;
+    box-shadow: 0 1px 6px 5.94px rgba(0, 0, 0, .2);
+    animation: rotateText 30s linear infinite; /* Animação de rotação */
+}
+
+.text b {
+    position: absolute;
+    transform-origin: 0 247px;
+    display: block;
+    top: 0;
+    left: 50%;
+    font-size: 1.2rem;
+}
+
+/* #################### Key Frames #################### */
+
+@keyframes moveText { /* / Animação no Frontend Developer */
+    0%, 10%, 100% {
+        background-position: -24rem 0;
+    }
+    65%, 85% {
+        background-position: 0rem 0;
+    }
+}
+
+@keyframes moveCursorText { /* / Animação no Frontend Developer */
+    0%, 10%, 100% {
+        width: 0;
+    }
+    65%, 78%, 85% {
+        width: 100%;
+        opacity: 1;
+    }
+    75%, 85% {
+        opacity: 0;
+    }
+}
+
+@keyframes animate { /* Animação de Brilho */
+    0% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes rotateText {
+    0% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes progress { /* Animação de progresso */
+    to {
+        stroke-dashoffset: var(--target);
+    }
+}
+
+@keyframes floatImage { /* Animação de imagem flutuante */
+    to {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-22px);
+    }100% {
+        transform: translateY(0);
+    }
+}
