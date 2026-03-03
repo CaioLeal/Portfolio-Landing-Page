@@ -267,3 +267,72 @@ section {
         transform: translateY(0);
     }
 }
+
+/* ##################### MEDIA QUERIES ##################### */
+/* No final do home.css, substitua o bloco @media atual por este: */
+@media (max-width: 768px) {
+    section {
+        padding: 100px 5% 40px; /* Ajusta o padding da seção */
+    }
+
+    .home {
+        overflow: hidden;
+        display: flex;
+        flex-direction: column-reverse; /* Foto em cima, texto embaixo */
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding-top: 120px; /* Espaço para não bater no header fixo */
+    }
+
+    .img-hero {
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    .img-hero img {
+        width: 250px; 
+        transform: none; /* Reset total dos translates anteriores */
+        z-index: 5;
+    }
+
+    .rotate-text {
+        position: absolute;
+        top: 54%; /* Ajuste imagem pra ficar no centro */
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.6); /* Centraliza perfeitamente na imagem */
+    }
+
+    .hero-info {
+        width: 100%;
+        margin-top: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-info h1 {
+        font-size: 2.5rem; /* Nome um pouco menor no mobile */
+    }
+
+    .text-animate {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .btn-box {
+        width: 100%;
+        max-width: 300px;
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 3rem;
+    }
+
+    .social-media {
+        margin: 0 auto;
+    }
+}
