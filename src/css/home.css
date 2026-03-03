@@ -6,7 +6,7 @@ section {
     min-height: 100vh; /* Seção ocupa toda altura da tela */
     height: 100%; /* Garante altura seja de 100% do container pai */
     width: 100%; /* Largura total da seção */
-    display: grid;
+    display: flex; /* ou grid caso prefira */
     grid-template-columns: repeat(2 , 1fr); /*Divide a seção em duas colunas iguais */
     align-items: center; /* Alinhamento vertical no centro */
     grid-gap: 4em; /* Espaçamento entre colunas */
@@ -38,7 +38,7 @@ section {
     font-weight: 700;
     margin-bottom: 1rem;
     color: transparent;
-    -webkit-text-stroke: .1vw var(--main-color);
+    -webkit-text-stroke: .1vw #770753;
     background: var(--gradient-color-bg);
     background-repeat: no-repeat;
     -webkit-background-clip: text;
@@ -46,6 +46,7 @@ section {
     transition: .6s;
     letter-spacing: 2px;
     animation: moveText 3s linear infinite;
+    animation-delay: 2s;
 }
 
 .text-animate h2::before {
@@ -57,6 +58,7 @@ section {
     height: 70%;
     border-right: 2px solid var(--main-color);
     animation: moveCursorText 3s linear infinite;
+    animation-delay: 2s; 
 }
 
 .hero-info p {
@@ -87,7 +89,7 @@ section {
     border-radius: 5px;
     font-weight: 500;
     color: #000;
-    box-shadow: rgba(60, 64, 67, .3)0px 1px 2px 0, rgba(60, 64, 67, .15)0px 2px 6px 2px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
     transition: all .3s ease;
 }
 
@@ -103,6 +105,7 @@ section {
     height: 42px;
     font-size: 1.5rem;
     color: var(--main-color);
+    background: #fff;
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -127,9 +130,10 @@ section {
     position: absolute;
     width: 50px;
     height: 50px;
-    background: var(--gradient-color-bg);
+    background: var(--gradient-color-bg); /* Cor de fundo das ondinhas de fundo */
     border-radius: 50%;
     display: flex;
+    align-items: center;
     justify-content: center;
     animation: animate 1s linear infinite;
 }
@@ -142,10 +146,9 @@ section {
 
 .img-hero img {
     position: relative;
-    width: 400px;
-    height: 400px;
-    object-fit: cover; /* Faz a imagem preencher o espaço sem distorcer */
-    border-radius: 50%;
+    width: 410px;
+    height: auto;
+    transform: translate(-5px, 49px);
     z-index: 10;
 }
 
@@ -165,7 +168,7 @@ section {
     position: relative;
     width: 442px;
     height: 442px;
-    background: var(--main-color);
+    background: red;
     border: 6px solid #eeaef0;
     border-radius: 50%;
     z-index: 1;
@@ -173,7 +176,7 @@ section {
 }
 
 .rotate-text span::before {
-    content: '';
+    content: "";
     position: absolute;
     inset: 20px;
     background: #00aaff;
@@ -257,9 +260,7 @@ section {
 }
 
 @keyframes floatImage { /* Animação de imagem flutuante */
-    to {
-        transform: translateY(0);
-    }
+
     50% {
         transform: translateY(-22px);
     }100% {

@@ -36,13 +36,14 @@ ul.navlist {
     font-weight: 600;
 }
 
-.navlist li a:hover, .navlist li a.active {
+.navlist li a:hover,
+.navlist li a.active {
     background: var(--gradient-color-bg);
     -webkit-background-clip: text;
     color: transparent;
 }
 
-.right-header {
+.right-header{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -62,7 +63,7 @@ ul.navlist {
     box-shadow: var(--hover-box-shadow);
 }
 
-.menu--icon .bar, menu-icon::after, menu-icon::before {
+.menu-icon .bar, menu-icon::after, menu-icon::before {
     content: "";
     display: none; /* Esconde as barras do menu por padrão */
     width: 100%; /* Largura total do icone do menu */
@@ -78,7 +79,7 @@ ul.navlist {
 }
 
 .menu-icon.active::after {
-    transform: rotate(-45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
 }
 
 .menu-icon.active .bar {
